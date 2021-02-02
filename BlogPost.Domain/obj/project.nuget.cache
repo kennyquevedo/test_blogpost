@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XU1eg2YyAYkn6bBGBvj4dfnO7c5EwS7xn+DIBhEdnfoKpSXY7ksNVkxwBNzdCIKv8o+5k8ydCpGx2+g2C99AuQ==",
+  "dgSpecHash": "es0R5as2tHWqRqTio+ybkSblzjPZ+14hYnu+67g8vFIRnqv0l078JADP9By2TtxMJvbIlsF2lqq8FK1Q6+9OfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.Domain\\BlogPost.Domain.csproj",
+  "projectFilePath": "D:\\Workspaces\\test_blogpost\\BlogPost.Domain\\BlogPost.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

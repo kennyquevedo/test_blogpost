@@ -5724,11 +5724,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.AppCore\\BlogPost.AppCore.csproj",
+      "projectUniqueName": "D:\\Workspaces\\test_blogpost\\BlogPost.AppCore\\BlogPost.AppCore.csproj",
       "projectName": "BlogPost.AppCore",
-      "projectPath": "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.AppCore\\BlogPost.AppCore.csproj",
+      "projectPath": "D:\\Workspaces\\test_blogpost\\BlogPost.AppCore\\BlogPost.AppCore.csproj",
       "packagesPath": "C:\\Users\\kenny\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.AppCore\\obj\\",
+      "outputPath": "D:\\Workspaces\\test_blogpost\\BlogPost.AppCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kenny\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5745,8 +5745,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.Domain\\BlogPost.Domain.csproj": {
-              "projectPath": "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.Domain\\BlogPost.Domain.csproj"
+            "D:\\Workspaces\\test_blogpost\\BlogPost.Domain\\BlogPost.Domain.csproj": {
+              "projectPath": "D:\\Workspaces\\test_blogpost\\BlogPost.Domain\\BlogPost.Domain.csproj"
             }
           }
         }

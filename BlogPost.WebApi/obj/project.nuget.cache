@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xrQpsX6LNdlYhutdQfg7f38CX3hx2jlZx2EYWtTsCgeKyYEqbikTkijJ5HQVTIHiCoFMTWeyLHz3pRcdy0xfNA==",
+  "dgSpecHash": "AeQBw51nWEMfR+E6tJz5AwDf2VN6Saq+zxpX9Oi/CPhgumDzPo4yO+EIcWi4kLFyn9JdoG09sWHs2WV0b6qhcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.WebApi\\BlogPost.WebApi.csproj",
+  "projectFilePath": "D:\\Workspaces\\test_blogpost\\BlogPost.WebApi\\BlogPost.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kenny\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kenny\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

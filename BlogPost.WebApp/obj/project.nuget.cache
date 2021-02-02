@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+Axk4WI5UdEVLKtzpeTjJAj4oFQXJWBnFVuW2iZTNQE+H25CJy8xPG64VHCaL4ZRUSwZwDW8GBbjvWxDEqoG3w==",
+  "dgSpecHash": "WE5PF0fj0wT/rdLuf3iGlall4UFLxtn8dpTRuV9rU3ILnOF+oAk8PESmqx/oRvIjTPM2Q0WOWEDnrIKC+MJfmg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.WebApp\\BlogPost.WebApp.csproj",
+  "projectFilePath": "D:\\Workspaces\\test_blogpost\\BlogPost.WebApp\\BlogPost.WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kenny\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\3.1.10\\microsoft.aspnetcore.mvc.razor.extensions.3.1.10.nupkg.sha512",
     "C:\\Users\\kenny\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\3.1.10\\microsoft.aspnetcore.mvc.razor.runtimecompilation.3.1.10.nupkg.sha512",

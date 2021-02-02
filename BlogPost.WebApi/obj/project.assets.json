@@ -5837,11 +5837,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.WebApi\\BlogPost.WebApi.csproj",
+      "projectUniqueName": "D:\\Workspaces\\test_blogpost\\BlogPost.WebApi\\BlogPost.WebApi.csproj",
       "projectName": "BlogPost.WebApi",
-      "projectPath": "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.WebApi\\BlogPost.WebApi.csproj",
+      "projectPath": "D:\\Workspaces\\test_blogpost\\BlogPost.WebApi\\BlogPost.WebApi.csproj",
       "packagesPath": "C:\\Users\\kenny\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.WebApi\\obj\\",
+      "outputPath": "D:\\Workspaces\\test_blogpost\\BlogPost.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kenny\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5858,8 +5858,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.AppCore\\BlogPost.AppCore.csproj": {
-              "projectPath": "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.AppCore\\BlogPost.AppCore.csproj"
+            "D:\\Workspaces\\test_blogpost\\BlogPost.AppCore\\BlogPost.AppCore.csproj": {
+              "projectPath": "D:\\Workspaces\\test_blogpost\\BlogPost.AppCore\\BlogPost.AppCore.csproj"
             }
           }
         }

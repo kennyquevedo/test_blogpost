@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.WebApp\\BlogPost.WebApp.csproj": {}
+    "D:\\Workspaces\\test_blogpost\\BlogPost.WebApp\\BlogPost.WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.WebApp\\BlogPost.WebApp.csproj": {
+    "D:\\Workspaces\\test_blogpost\\BlogPost.WebApp\\BlogPost.WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.WebApp\\BlogPost.WebApp.csproj",
+        "projectUniqueName": "D:\\Workspaces\\test_blogpost\\BlogPost.WebApp\\BlogPost.WebApp.csproj",
         "projectName": "BlogPost.WebApp",
-        "projectPath": "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.WebApp\\BlogPost.WebApp.csproj",
+        "projectPath": "D:\\Workspaces\\test_blogpost\\BlogPost.WebApp\\BlogPost.WebApp.csproj",
         "packagesPath": "C:\\Users\\kenny\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kenny\\OneDrive\\Developer\\Workspaces\\BlogPost\\BlogPost.WebApp\\obj\\",
+        "outputPath": "D:\\Workspaces\\test_blogpost\\BlogPost.WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kenny\\AppData\\Roaming\\NuGet\\NuGet.Config",
