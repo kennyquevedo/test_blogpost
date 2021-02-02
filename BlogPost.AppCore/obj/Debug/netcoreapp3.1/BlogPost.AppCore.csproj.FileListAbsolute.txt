@@ -1,0 +1,12 @@
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.AppCore.deps.json
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.AppCore.dll
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.AppCore.pdb
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.Domain.dll
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.Domain.pdb
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.csprojAssemblyReference.cache
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.AssemblyInfoInputs.cache
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.AssemblyInfo.cs
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.csproj.CoreCompileInputs.cache
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.csproj.CopyComplete
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.dll
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.pdb

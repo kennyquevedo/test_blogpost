@@ -1,0 +1,9 @@
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.Domain\bin\Debug\netcoreapp3.1\BlogPost.Domain.deps.json
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.Domain\bin\Debug\netcoreapp3.1\BlogPost.Domain.dll
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.Domain\bin\Debug\netcoreapp3.1\BlogPost.Domain.pdb
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.Domain\obj\Debug\netcoreapp3.1\BlogPost.Domain.csprojAssemblyReference.cache
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.Domain\obj\Debug\netcoreapp3.1\BlogPost.Domain.AssemblyInfoInputs.cache
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.Domain\obj\Debug\netcoreapp3.1\BlogPost.Domain.AssemblyInfo.cs
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.Domain\obj\Debug\netcoreapp3.1\BlogPost.Domain.csproj.CoreCompileInputs.cache
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.Domain\obj\Debug\netcoreapp3.1\BlogPost.Domain.dll
+C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.Domain\obj\Debug\netcoreapp3.1\BlogPost.Domain.pdb
