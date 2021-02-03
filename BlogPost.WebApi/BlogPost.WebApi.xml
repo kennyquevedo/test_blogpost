@@ -15,19 +15,6 @@
             </summary>
             <param name="unitWork"></param>
         </member>
-        <member name="M:BlogPost.WebApi.Controllers.RoleController.GetById(System.Int32)">
-            <summary>
-            Get Role by Id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.RoleController.GetAll">
-            <summary>
-            Get all roles
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:BlogPost.WebApi.Controllers.RoleController.AddRole(BlogPost.WebApi.Dto.Role)">
             <summary>
             Add a role to database
@@ -40,6 +27,33 @@
             Update Role
             </summary>
             <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlogPost.WebApi.Controllers.RoleController.DeleteRole(System.Int32)">
+            <summary>
+            Delete Role.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlogPost.WebApi.Controllers.RoleController.GetById(System.Int32)">
+            <summary>
+            Get Role by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlogPost.WebApi.Controllers.RoleController.GetRoleByName(System.String)">
+            <summary>
+            Get Role by Name
+            </summary>
+            <param name="roleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlogPost.WebApi.Controllers.RoleController.GetAll">
+            <summary>
+            Get all roles
+            </summary>
             <returns></returns>
         </member>
         <member name="T:BlogPost.WebApi.Controllers.UserController">
@@ -100,6 +114,31 @@
             <param name="user"></param>
             <returns></returns>
         </member>
+        <member name="M:BlogPost.WebApi.Controllers.UserController.GetUser(System.Int32)">
+            <summary>
+            Get user info and roles of the user.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BlogPost.WebApi.Controllers.UserRoleController">
+            <summary>
+            Represent relationship between roles and users.
+            </summary>
+        </member>
+        <member name="M:BlogPost.WebApi.Controllers.UserRoleController.#ctor(BlogPost.Domain.Interfaces.IUnitWork)">
+            <summary>
+            Ctor
+            </summary>
+            <param name="unitWork"></param>
+        </member>
+        <member name="M:BlogPost.WebApi.Controllers.UserRoleController.AddUserToRole(BlogPost.WebApi.Dto.User)">
+            <summary>
+            Add roles to the user.
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
         <member name="T:BlogPost.WebApi.Dto.DateTimeData">
             <summary>
             Represent creation and update dates of the entity.
@@ -130,6 +169,11 @@
             Name of the role
             </summary>
         </member>
+        <member name="P:BlogPost.WebApi.Dto.Role.Users">
+            <summary>
+            List of the User roles.
+            </summary>
+        </member>
         <member name="T:BlogPost.WebApi.Dto.User">
             <summary>
             Represent user
@@ -153,6 +197,11 @@
         <member name="P:BlogPost.WebApi.Dto.User.Name">
             <summary>
             Get or set Name
+            </summary>
+        </member>
+        <member name="P:BlogPost.WebApi.Dto.User.Roles">
+            <summary>
+            List of the user roles.
             </summary>
         </member>
         <member name="T:BlogPost.WebApi.Startup">

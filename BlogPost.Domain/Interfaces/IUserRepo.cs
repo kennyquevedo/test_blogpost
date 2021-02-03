@@ -6,5 +6,7 @@ namespace BlogPost.Domain.Interfaces
 {
     public interface IUserRepo : IGenericRepository<User>
     {
+        User GetUser(int id);
+        User ValidateUser(string userName, string password);
     }
 }

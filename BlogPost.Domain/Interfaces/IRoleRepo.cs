@@ -7,5 +7,6 @@ namespace BlogPost.Domain.Interfaces
     public interface IRoleRepo:IGenericRepository<Role>
     {
         IEnumerable<Role> GetMostUsedRoles();
+        IEnumerable<Role> GetRolesByIds(IEnumerable<int> ids);
     }
 }

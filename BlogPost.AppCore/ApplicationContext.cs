@@ -17,15 +17,15 @@ namespace BlogPost.AppCore
         {
             modelBuilder.Entity<UserRole>().HasKey(ur => new { ur.UserId, ur.RoleId });
 
-            //modelBuilder.Entity<UserRole>()
-            //    .HasOne<User>(u => u.User)
-            //    .WithMany(c => c.UserRoles)
-            //    .HasForeignKey(u => u.UserId);
+            modelBuilder.Entity<UserRole>()
+                .HasOne<User>(u => u.User)
+                .WithMany(c => c.UserRoles)
+                .HasForeignKey(u => u.UserId);
 
-            //modelBuilder.Entity<UserRole>()
-            //    .HasOne<Role>(r => r.Role)
-            //    .WithMany(u => u.UserRoles)
-            //    .HasForeignKey(u => u.RoleId);
+            modelBuilder.Entity<UserRole>()
+                .HasOne<Role>(r => r.Role)
+                .WithMany(u => u.UserRoles)
+                .HasForeignKey(u => u.RoleId);
         }
 
         public DbSet<Role> Roles { get; set; }

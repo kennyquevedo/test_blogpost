@@ -3,6 +3,7 @@ using BlogPost.Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 
 namespace BlogPost.WebApi.Controllers
 {
@@ -22,35 +23,6 @@ namespace BlogPost.WebApi.Controllers
         public RoleController(IUnitWork unitWork)
         {
             _unitWork = unitWork;
-        }
-
-        /// <summary>
-        /// Get Role by Id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpGet("{id}")]
-        public IActionResult GetById(int id)
-        {
-            var role = _unitWork.Roles.GetById(id);
-            if (role == null) return NotFound();
-            return Ok(role);
-        }
-
-        /// <summary>
-        /// Get all roles
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            var roles = _unitWork.Roles.GetAll();
-            if (roles == null)
-                return NotFound();
-
-            return Ok(roles);
-
-            //TODO: Validate empty/null objects.
         }
 
         /// <summary>
@@ -74,8 +46,6 @@ namespace BlogPost.WebApi.Controllers
             _unitWork.Complete();
 
             return Ok();
-
-            //TODO: Add swagger documentation
         }
 
         /// <summary>
@@ -108,5 +78,66 @@ namespace BlogPost.WebApi.Controllers
 
             return Ok();
         }
+
+        /// <summary>
+        /// Delete Role.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
+        public IActionResult DeleteRole(int id)
+        {
+            var role = _unitWork.Roles.GetById(id);
+            if (role == null) return NotFound();
+
+            _unitWork.Roles.Remove(role);
+            _unitWork.Complete();
+
+            return Ok();
+        }
+
+        /// <summary>
+        /// Get Role by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var role = _unitWork.Roles.GetById(id);
+            if (role == null) return NotFound();
+            return Ok(role);
+        }
+
+        /// <summary>
+        /// Get Role by Name
+        /// </summary>
+        /// <param name="roleName"></param>
+        /// <returns></returns>
+        [HttpGet("rolename")]
+        public IActionResult GetRoleByName([FromBody] string roleName)
+        {
+            var role = _unitWork.Roles.Find(r => r.Name == roleName).FirstOrDefault();
+            if (role == null) return NotFound();
+            return Ok(role);
+        }
+
+        /// <summary>
+        /// Get all roles
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("roles")]
+        public IActionResult GetAll()
+        {
+            var roles = _unitWork.Roles.GetAll();
+            if (roles == null)
+                return NotFound();
+
+            return Ok(roles);
+
+            //TODO: Validate empty/null objects.
+        }
+
+       
     }
 }

@@ -27,6 +27,9 @@ namespace BlogPost.WebApi.Controllers
             _unitWork = unitWork;
         }
 
+        #region Post
+
+
         /// <summary>
         /// Add new user.
         /// </summary>
@@ -131,11 +134,13 @@ namespace BlogPost.WebApi.Controllers
             }
         }
 
+        #endregion
+
+        #region Get
         /// <summary>
         /// Get all users
         /// </summary>
-        [HttpGet]
-        [Route("users")]
+        [HttpGet("users")]
         public IActionResult GetAllUsers()
         {
             try
@@ -185,10 +190,10 @@ namespace BlogPost.WebApi.Controllers
         /// </summary>
         /// <param name="userName"></param>
         /// <returns></returns>
-        [HttpGet]
-        [Route("username/{userName}")]
-        public IActionResult GetUserByUserName(string userName)
+        [HttpGet("username")]
+        public IActionResult GetUserByUserName([FromBody] string userName)
         {
+            //TODO: replace route by verb
             try
             {
                 var user = _unitWork.Users.Find(u => u.UserName == userName).FirstOrDefault();
@@ -211,8 +216,7 @@ namespace BlogPost.WebApi.Controllers
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        [HttpGet]
-        [Route("validate")]
+        [HttpGet("validate")]
         public IActionResult GetUserByUserNameAndPassword([FromBody] Dto.User user)
         {
             try
@@ -227,7 +231,7 @@ namespace BlogPost.WebApi.Controllers
                 if (user_ctx == null)
                     return NotFound();
 
-                return Ok(Guid.NewGuid());
+                return Ok(user_ctx);
             }
             catch (Exception ex)
             {
@@ -236,5 +240,67 @@ namespace BlogPost.WebApi.Controllers
                     (ex.InnerException != null) ? ex.InnerException.Message : ex.Message);
             }
         }
+
+        /// <summary>
+        /// Get user info and roles of the user.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("userinfo/{id}")]
+        public IActionResult GetUser(int id)
+        {
+            try
+            {
+                var user_ctx = _unitWork.Users.GetUser(id);
+                if (user_ctx == null)
+                    return NotFound();
+
+                var roles = new List<Dto.Role>();
+                foreach (var role in user_ctx.UserRoles)
+                {
+                    var role_db = new Role();
+                    if (role.Role == null)
+                        role_db = _unitWork.Roles.GetById(role.RoleId);
+                    else
+                        role_db = role.Role;
+
+                    if (role.Role != null)
+                    {
+                        roles.Add(new Dto.Role()
+                        {
+                            CreatedDate = role_db.CreatedDate,
+                            Id = role_db.Id,
+                            ModifiedDate = role_db.ModifiedDate,
+                            Name = role_db.Name
+                        });
+                    }
+                }
+
+
+                var userinfo = new Dto.User()
+                {
+                    Id = user_ctx.Id,
+                    UserName = user_ctx.UserName,
+                    CreatedDate = user_ctx.CreatedDate,
+                    ModifiedDate = user_ctx.ModifiedDate,
+                    Name = user_ctx.Name,
+                    Password = user_ctx.Password,
+                    Roles = roles
+                };
+
+                return Ok(userinfo);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    (ex.InnerException != null) ? ex.InnerException.Message : ex.Message);
+            }
+        }
+
+        #endregion
+
+
+
     }
 }

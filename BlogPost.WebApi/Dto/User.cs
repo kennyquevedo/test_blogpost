@@ -29,5 +29,10 @@ namespace BlogPost.WebApi.Dto
         /// Get or set Name
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// List of the user roles.
+        /// </summary>
+        public List<Role> Roles { get; set; }
     }
 }
