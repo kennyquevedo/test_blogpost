@@ -24,7 +24,7 @@ namespace BlogPost.BLogic
         public void AddRole(Dto.Role role_dto)
         {
             if (role_dto == null)
-                new ArgumentException("Value must be passed in the request body");
+                new ArgumentException("Object is null.");
 
             try
             {
@@ -78,6 +78,9 @@ namespace BlogPost.BLogic
 
         public void UpdateRole(Dto.Role role)
         {
+            if (role == null)
+                throw new ArgumentException("Object is null.");
+
             if (role.Id <= 0)
                 throw new ArgumentException("Id must be greater than zero (0)");
 
@@ -92,6 +95,10 @@ namespace BlogPost.BLogic
                     //Update
                     _unitWork.Roles.Update(role_);
                     _unitWork.Complete();
+                }
+                else
+                {
+                    throw new RecordNotFoundException($"Role with id {role.Id} not found.");
                 }
             }
             catch (AutoMapperMappingException)

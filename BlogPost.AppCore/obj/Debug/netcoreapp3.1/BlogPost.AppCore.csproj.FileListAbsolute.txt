@@ -13,8 +13,10 @@ C:\Users\kenny\OneDrive\Developer\Workspaces\BlogPost\BlogPost.AppCore\obj\Debug
 D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.AppCore.deps.json
 D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.AppCore.dll
 D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.AppCore.pdb
+D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.Common.dll
 D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.Domain.dll
 D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.Domain.pdb
+D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.Common.pdb
 D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.csprojAssemblyReference.cache
 D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.AssemblyInfoInputs.cache
 D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.AssemblyInfo.cs
@@ -22,5 +24,3 @@ D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.Ap
 D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.csproj.CopyComplete
 D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.dll
 D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.pdb
-D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.Common.dll
-D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.Common.pdb

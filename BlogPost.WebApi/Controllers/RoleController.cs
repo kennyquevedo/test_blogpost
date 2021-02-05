@@ -36,13 +36,14 @@ namespace BlogPost.WebApi.Controllers
         [HttpPost]
         public IActionResult AddRole([FromBody] Dto.Role role)
         {
-            if (role == null)
-                return BadRequest("Value must be passed in the request body");
-
             try
             {
                 _blRoles.AddRole(role);
                 return NoContent();
+            }
+            catch (ArgumentException argEx)
+            {
+                return BadRequest(argEx);
             }
             catch (Exception ex)
             {
@@ -58,9 +59,6 @@ namespace BlogPost.WebApi.Controllers
         [HttpPut]
         public IActionResult UpdateRole([FromBody] Dto.Role role)
         {
-            if (role == null)
-                return BadRequest("Value must be passed in the request body");
-
             try
             {
                 //Update
@@ -70,6 +68,10 @@ namespace BlogPost.WebApi.Controllers
             catch (ArgumentException argEx)
             {
                 return BadRequest(argEx.Message);
+            }
+            catch (RecordNotFoundException recordEx)
+            {
+                return NotFound(recordEx.Message);
             }
             catch (Exception ex)
             {
@@ -89,6 +91,10 @@ namespace BlogPost.WebApi.Controllers
             {
                 _blRoles.DeleteRole(id);
                 return NoContent();
+            }
+            catch (ArgumentException argEx)
+            {
+                return BadRequest(argEx);
             }
             catch (RecordNotFoundException recordEx)
             {
@@ -140,6 +146,10 @@ namespace BlogPost.WebApi.Controllers
                 else
                     return NoContent();
             }
+            catch (ArgumentException argEx)
+            {
+                return BadRequest(argEx);
+            }
             catch (RecordNotFoundException recordEx)
             {
                 return NotFound(recordEx.Message);
@@ -160,12 +170,19 @@ namespace BlogPost.WebApi.Controllers
         {
             try
             {
+                if (string.IsNullOrEmpty(roleName))
+                    return BadRequest("Value must be passed in the request body");
+
                 var role = _blRoles.GetByName(roleName);
 
                 if (role != null)
                     return Ok(role);
                 else
                     return NoContent();
+            }
+            catch(ArgumentException argEx)
+            {
+                return BadRequest(argEx);
             }
             catch (RecordNotFoundException recordEx)
             {
