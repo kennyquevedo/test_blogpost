@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "BlogPost.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/BlogPost.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlogPost.Common.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BlogPost.Common/1.0.0": {
+      "type": "project",
+      "path": "../BlogPost.Common/BlogPost.Common.csproj",
+      "msbuildProject": "../BlogPost.Common/BlogPost.Common.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "BlogPost.Common >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\kenny\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Workspaces\\test_blogpost\\BlogPost.Common\\BlogPost.Common.csproj": {
+              "projectPath": "D:\\Workspaces\\test_blogpost\\BlogPost.Common\\BlogPost.Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

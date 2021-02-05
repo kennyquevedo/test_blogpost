@@ -4,25 +4,35 @@
         <name>BlogPost.WebApi</name>
     </assembly>
     <members>
+        <member name="T:BlogPost.WebApi.AutoMapperProfile">
+            <summary>
+            Main profile to map entities.
+            </summary>
+        </member>
+        <member name="M:BlogPost.WebApi.AutoMapperProfile.#ctor">
+            <summary>
+            Ctor
+            </summary>
+        </member>
         <member name="T:BlogPost.WebApi.Controllers.RoleController">
             <summary>
             Api controller for Role
             </summary>
         </member>
-        <member name="M:BlogPost.WebApi.Controllers.RoleController.#ctor(BlogPost.Domain.Interfaces.IUnitWork)">
+        <member name="M:BlogPost.WebApi.Controllers.RoleController.#ctor(BlogPost.BLogic.Interfaces.IBLRoles)">
             <summary>
             Ctor
             </summary>
-            <param name="unitWork"></param>
+            <param name="blRoles"></param>
         </member>
-        <member name="M:BlogPost.WebApi.Controllers.RoleController.AddRole(BlogPost.WebApi.Dto.Role)">
+        <member name="M:BlogPost.WebApi.Controllers.RoleController.AddRole(BlogPost.BLogic.Dto.Role)">
             <summary>
             Add a role to database
             </summary>
             <param name="role"></param>
             <returns></returns>
         </member>
-        <member name="M:BlogPost.WebApi.Controllers.RoleController.UpdateRole(BlogPost.WebApi.Dto.Role)">
+        <member name="M:BlogPost.WebApi.Controllers.RoleController.UpdateRole(BlogPost.BLogic.Dto.Role)">
             <summary>
             Update Role
             </summary>
@@ -34,6 +44,12 @@
             Delete Role.
             </summary>
             <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlogPost.WebApi.Controllers.RoleController.GetAll">
+            <summary>
+            Get all roles
+            </summary>
             <returns></returns>
         </member>
         <member name="M:BlogPost.WebApi.Controllers.RoleController.GetById(System.Int32)">
@@ -50,158 +66,14 @@
             <param name="roleName"></param>
             <returns></returns>
         </member>
-        <member name="M:BlogPost.WebApi.Controllers.RoleController.GetAll">
-            <summary>
-            Get all roles
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:BlogPost.WebApi.Controllers.UserController">
             <summary>
             Api controller for user
             </summary>
         </member>
-        <member name="M:BlogPost.WebApi.Controllers.UserController.#ctor(BlogPost.Domain.Interfaces.IUnitWork)">
-            <summary>
-            Ctor
-            </summary>
-            <param name="unitWork"></param>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.UserController.AddUser(BlogPost.WebApi.Dto.User)">
-            <summary>
-            Add new user.
-            </summary>
-            <param name="user"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.UserController.UpdateUser(BlogPost.WebApi.Dto.User)">
-            <summary>
-            Update user info.
-            </summary>
-            <param name="user"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.UserController.Delete(System.Int32)">
-            <summary>
-            Delete user.
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.UserController.GetAllUsers">
-            <summary>
-            Get all users
-            </summary>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.UserController.GetUserById(System.Int32)">
-            <summary>
-            Get user by id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.UserController.GetUserByUserName(System.String)">
-            <summary>
-            Get user by user name
-            </summary>
-            <param name="userName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.UserController.GetUserByUserNameAndPassword(BlogPost.WebApi.Dto.User)">
-            <summary>
-            Get user by user name and password
-            </summary>
-            <param name="user"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.UserController.GetUser(System.Int32)">
-            <summary>
-            Get user info and roles of the user.
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
         <member name="T:BlogPost.WebApi.Controllers.UserRoleController">
             <summary>
             Represent relationship between roles and users.
-            </summary>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.UserRoleController.#ctor(BlogPost.Domain.Interfaces.IUnitWork)">
-            <summary>
-            Ctor
-            </summary>
-            <param name="unitWork"></param>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.UserRoleController.AddUserToRole(BlogPost.WebApi.Dto.User)">
-            <summary>
-            Add roles to the user.
-            </summary>
-            <param name="user"></param>
-            <returns></returns>
-        </member>
-        <member name="T:BlogPost.WebApi.Dto.DateTimeData">
-            <summary>
-            Represent creation and update dates of the entity.
-            </summary>
-        </member>
-        <member name="P:BlogPost.WebApi.Dto.DateTimeData.CreatedDate">
-            <summary>
-            Creation date
-            </summary>
-        </member>
-        <member name="P:BlogPost.WebApi.Dto.DateTimeData.ModifiedDate">
-            <summary>
-            Modification Date
-            </summary>
-        </member>
-        <member name="T:BlogPost.WebApi.Dto.Role">
-            <summary>
-            Represent role
-            </summary>
-        </member>
-        <member name="P:BlogPost.WebApi.Dto.Role.Id">
-            <summary>
-            Id of the role
-            </summary>
-        </member>
-        <member name="P:BlogPost.WebApi.Dto.Role.Name">
-            <summary>
-            Name of the role
-            </summary>
-        </member>
-        <member name="P:BlogPost.WebApi.Dto.Role.Users">
-            <summary>
-            List of the User roles.
-            </summary>
-        </member>
-        <member name="T:BlogPost.WebApi.Dto.User">
-            <summary>
-            Represent user
-            </summary>
-        </member>
-        <member name="P:BlogPost.WebApi.Dto.User.Id">
-            <summary>
-            Get or set user id
-            </summary>
-        </member>
-        <member name="P:BlogPost.WebApi.Dto.User.UserName">
-            <summary>
-            Get or set username
-            </summary>
-        </member>
-        <member name="P:BlogPost.WebApi.Dto.User.Password">
-            <summary>
-            Get or set password
-            </summary>
-        </member>
-        <member name="P:BlogPost.WebApi.Dto.User.Name">
-            <summary>
-            Get or set Name
-            </summary>
-        </member>
-        <member name="P:BlogPost.WebApi.Dto.User.Roles">
-            <summary>
-            List of the user roles.
             </summary>
         </member>
         <member name="T:BlogPost.WebApi.Startup">

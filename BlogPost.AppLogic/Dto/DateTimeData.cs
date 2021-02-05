@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlogPost.WebApi.Dto
+namespace BlogPost.BLogic.Dto
 {
     /// <summary>
     /// Represent creation and update dates of the entity.

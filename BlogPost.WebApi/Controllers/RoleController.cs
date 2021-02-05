@@ -1,9 +1,12 @@
-﻿using BlogPost.Domain;
+﻿using BlogPost.BLogic.Interfaces;
+using BlogPost.Domain;
 using BlogPost.Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
+using Dto = BlogPost.BLogic.Dto;
+using BlogPost.Common;
 
 namespace BlogPost.WebApi.Controllers
 {
@@ -14,15 +17,15 @@ namespace BlogPost.WebApi.Controllers
     [ApiController]
     public class RoleController : ControllerBase
     {
-        private readonly IUnitWork _unitWork;
+        private readonly IBLRoles _blRoles;
 
         /// <summary>
         /// Ctor
         /// </summary>
-        /// <param name="unitWork"></param>
-        public RoleController(IUnitWork unitWork)
+        /// <param name="blRoles"></param>
+        public RoleController(IBLRoles blRoles)
         {
-            _unitWork = unitWork;
+            _blRoles = blRoles;
         }
 
         /// <summary>
@@ -36,16 +39,15 @@ namespace BlogPost.WebApi.Controllers
             if (role == null)
                 return BadRequest("Value must be passed in the request body");
 
-            var role_ctx = new Role
+            try
             {
-                Name = role.Name,
-                CreatedDate = DateTime.UtcNow
-            };
-
-            _unitWork.Roles.Add(role_ctx);
-            _unitWork.Complete();
-
-            return Ok();
+                _blRoles.AddRole(role);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
         }
 
         /// <summary>
@@ -59,24 +61,20 @@ namespace BlogPost.WebApi.Controllers
             if (role == null)
                 return BadRequest("Value must be passed in the request body");
 
-            if (role.Id <= 0)
-                return BadRequest("Id role must be provides to update the entity.");
-
-            var role_up = _unitWork.Roles.GetById(role.Id);
-            if (role_up != null)
+            try
             {
-                role_up.Name = role.Name;
-                role_up.ModifiedDate = DateTime.UtcNow;
+                //Update
+                _blRoles.UpdateRole(role);
+                return NoContent();
             }
-            else
+            catch (ArgumentException argEx)
             {
-                return StatusCode(StatusCodes.Status304NotModified, "role not found");
+                return BadRequest(argEx.Message);
             }
-
-            _unitWork.Roles.Update(role_up);
-            _unitWork.Complete();
-
-            return Ok();
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
         }
 
         /// <summary>
@@ -87,13 +85,42 @@ namespace BlogPost.WebApi.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteRole(int id)
         {
-            var role = _unitWork.Roles.GetById(id);
-            if (role == null) return NotFound();
+            try
+            {
+                _blRoles.DeleteRole(id);
+                return NoContent();
+            }
+            catch (RecordNotFoundException recordEx)
+            {
+                return NotFound(recordEx.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
 
-            _unitWork.Roles.Remove(role);
-            _unitWork.Complete();
-
-            return Ok();
+        /// <summary>
+        /// Get all roles
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("roles")]
+        public IActionResult GetAll()
+        {
+            //TODO: Validate produceresponsetype attributes.
+            //TODO: Validate 204 vs 404
+            try
+            {
+                var roles = _blRoles.GetAll();
+                if (roles != null)
+                    return Ok(roles);
+                else
+                    return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
         }
 
         /// <summary>
@@ -104,9 +131,23 @@ namespace BlogPost.WebApi.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var role = _unitWork.Roles.GetById(id);
-            if (role == null) return NotFound();
-            return Ok(role);
+            try
+            {
+                var role = _blRoles.GetById(id);
+
+                if (role != null)
+                    return Ok(role);
+                else
+                    return NoContent();
+            }
+            catch (RecordNotFoundException recordEx)
+            {
+                return NotFound(recordEx.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
         }
 
         /// <summary>
@@ -117,27 +158,24 @@ namespace BlogPost.WebApi.Controllers
         [HttpGet("rolename")]
         public IActionResult GetRoleByName([FromBody] string roleName)
         {
-            var role = _unitWork.Roles.Find(r => r.Name == roleName).FirstOrDefault();
-            if (role == null) return NotFound();
-            return Ok(role);
+            try
+            {
+                var role = _blRoles.GetByName(roleName);
+
+                if (role != null)
+                    return Ok(role);
+                else
+                    return NoContent();
+            }
+            catch (RecordNotFoundException recordEx)
+            {
+                return NotFound(recordEx.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
         }
 
-        /// <summary>
-        /// Get all roles
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet("roles")]
-        public IActionResult GetAll()
-        {
-            var roles = _unitWork.Roles.GetAll();
-            if (roles == null)
-                return NotFound();
-
-            return Ok(roles);
-
-            //TODO: Validate empty/null objects.
-        }
-
-       
     }
 }

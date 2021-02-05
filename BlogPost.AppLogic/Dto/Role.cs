@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlogPost.WebApi.Dto
+namespace BlogPost.BLogic.Dto
 {
     /// <summary>
     /// Represent role
@@ -24,5 +24,7 @@ namespace BlogPost.WebApi.Dto
         /// List of the User roles.
         /// </summary>
         public List<User> Users { get; set; }
+
+        //TODO: add methods to validate propeties values.
     }
 }

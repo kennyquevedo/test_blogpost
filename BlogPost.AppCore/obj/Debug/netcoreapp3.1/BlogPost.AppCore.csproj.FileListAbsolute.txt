@@ -22,3 +22,5 @@ D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.Ap
 D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.csproj.CopyComplete
 D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.dll
 D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\netcoreapp3.1\BlogPost.AppCore.pdb
+D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.Common.dll
+D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\netcoreapp3.1\BlogPost.Common.pdb

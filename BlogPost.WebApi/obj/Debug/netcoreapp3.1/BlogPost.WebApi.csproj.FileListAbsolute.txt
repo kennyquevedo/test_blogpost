@@ -138,3 +138,9 @@ D:\Workspaces\test_blogpost\BlogPost.WebApi\bin\Debug\netcoreapp3.1\Swashbuckle.
 D:\Workspaces\test_blogpost\BlogPost.WebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Workspaces\test_blogpost\BlogPost.WebApi\obj\Debug\netcoreapp3.1\BlogPost.WebApi.MvcApplicationPartsAssemblyInfo.cs
 D:\Workspaces\test_blogpost\BlogPost.WebApi\bin\Debug\netcoreapp3.1\BlogPost.WebApi.xml
+D:\Workspaces\test_blogpost\BlogPost.WebApi\bin\Debug\netcoreapp3.1\BlogPost.BLogic.dll
+D:\Workspaces\test_blogpost\BlogPost.WebApi\bin\Debug\netcoreapp3.1\BlogPost.BLogic.pdb
+D:\Workspaces\test_blogpost\BlogPost.WebApi\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\Workspaces\test_blogpost\BlogPost.WebApi\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Workspaces\test_blogpost\BlogPost.WebApi\bin\Debug\netcoreapp3.1\BlogPost.Common.dll
+D:\Workspaces\test_blogpost\BlogPost.WebApi\bin\Debug\netcoreapp3.1\BlogPost.Common.pdb

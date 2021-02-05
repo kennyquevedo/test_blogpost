@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "BlogPost.Domain/1.0.0": {
+        "dependencies": {
+          "BlogPost.Common": "1.0.0"
+        },
         "runtime": {
           "BlogPost.Domain.dll": {}
+        }
+      },
+      "BlogPost.Common/1.0.0": {
+        "runtime": {
+          "BlogPost.Common.dll": {}
         }
       }
     }
   },
   "libraries": {
     "BlogPost.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BlogPost.Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

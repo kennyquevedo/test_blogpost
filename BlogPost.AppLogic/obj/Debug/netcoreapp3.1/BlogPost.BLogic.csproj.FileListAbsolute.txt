@@ -1,0 +1,16 @@
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\bin\Debug\netcoreapp3.1\BlogPost.BLogic.deps.json
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\bin\Debug\netcoreapp3.1\BlogPost.BLogic.dll
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\bin\Debug\netcoreapp3.1\BlogPost.BLogic.pdb
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\bin\Debug\netcoreapp3.1\BlogPost.AppCore.dll
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\bin\Debug\netcoreapp3.1\BlogPost.Domain.dll
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\bin\Debug\netcoreapp3.1\BlogPost.AppCore.pdb
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\bin\Debug\netcoreapp3.1\BlogPost.Domain.pdb
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\obj\Debug\netcoreapp3.1\BlogPost.BLogic.csprojAssemblyReference.cache
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\obj\Debug\netcoreapp3.1\BlogPost.BLogic.AssemblyInfoInputs.cache
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\obj\Debug\netcoreapp3.1\BlogPost.BLogic.AssemblyInfo.cs
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\obj\Debug\netcoreapp3.1\BlogPost.BLogic.csproj.CoreCompileInputs.cache
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\obj\Debug\netcoreapp3.1\BlogPost.BLogic.csproj.CopyComplete
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\obj\Debug\netcoreapp3.1\BlogPost.BLogic.dll
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\obj\Debug\netcoreapp3.1\BlogPost.BLogic.pdb
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\bin\Debug\netcoreapp3.1\BlogPost.Common.dll
+D:\Workspaces\test_blogpost\BlogPost.AppLogic\bin\Debug\netcoreapp3.1\BlogPost.Common.pdb

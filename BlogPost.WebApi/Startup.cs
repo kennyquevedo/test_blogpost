@@ -1,6 +1,9 @@
+using AutoMapper;
 using BlogPost.AppCore;
 using BlogPost.AppCore.Repo;
 using BlogPost.AppCore.UnitWorks;
+using BlogPost.BLogic;
+using BlogPost.BLogic.Interfaces;
 using BlogPost.Domain.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -49,6 +52,8 @@ namespace BlogPost.WebApi
         {
             services.AddControllers();
 
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             services.AddDbContext<ApplicationContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                 b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
@@ -61,6 +66,8 @@ namespace BlogPost.WebApi
             #endregion
 
             services.AddTransient<IUnitWork, UnitWork>();
+            services.AddTransient<IBLRoles, BLRoles>();
+            
 
             #region Swagger
             var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";

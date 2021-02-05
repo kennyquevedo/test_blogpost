@@ -16,3 +16,6 @@ D:\Workspaces\test_blogpost\BlogPost.Domain\obj\Debug\netcoreapp3.1\BlogPost.Dom
 D:\Workspaces\test_blogpost\BlogPost.Domain\obj\Debug\netcoreapp3.1\BlogPost.Domain.csproj.CoreCompileInputs.cache
 D:\Workspaces\test_blogpost\BlogPost.Domain\obj\Debug\netcoreapp3.1\BlogPost.Domain.dll
 D:\Workspaces\test_blogpost\BlogPost.Domain\obj\Debug\netcoreapp3.1\BlogPost.Domain.pdb
+D:\Workspaces\test_blogpost\BlogPost.Domain\bin\Debug\netcoreapp3.1\BlogPost.Common.dll
+D:\Workspaces\test_blogpost\BlogPost.Domain\bin\Debug\netcoreapp3.1\BlogPost.Common.pdb
+D:\Workspaces\test_blogpost\BlogPost.Domain\obj\Debug\netcoreapp3.1\BlogPost.Domain.csproj.CopyComplete
