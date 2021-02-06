@@ -1,0 +1,17 @@
+D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\net5.0\BlogPost.AppCore.deps.json
+D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\net5.0\BlogPost.AppCore.dll
+D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\net5.0\ref\BlogPost.AppCore.dll
+D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\net5.0\BlogPost.AppCore.pdb
+D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\net5.0\BlogPost.Common.dll
+D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\net5.0\BlogPost.Domain.dll
+D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\net5.0\BlogPost.Domain.pdb
+D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\net5.0\BlogPost.Common.pdb
+D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\net5.0\BlogPost.AppCore.csprojAssemblyReference.cache
+D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\net5.0\BlogPost.AppCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\net5.0\BlogPost.AppCore.AssemblyInfoInputs.cache
+D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\net5.0\BlogPost.AppCore.AssemblyInfo.cs
+D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\net5.0\BlogPost.AppCore.csproj.CoreCompileInputs.cache
+D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\net5.0\BlogPost.AppCore.csproj.CopyComplete
+D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\net5.0\BlogPost.AppCore.dll
+D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\net5.0\ref\BlogPost.AppCore.dll
+D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\net5.0\BlogPost.AppCore.pdb

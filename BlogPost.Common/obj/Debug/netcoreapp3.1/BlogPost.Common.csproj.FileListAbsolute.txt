@@ -1,9 +1,9 @@
 D:\Workspaces\test_blogpost\BlogPost.Common\bin\Debug\netcoreapp3.1\BlogPost.Common.deps.json
 D:\Workspaces\test_blogpost\BlogPost.Common\bin\Debug\netcoreapp3.1\BlogPost.Common.dll
 D:\Workspaces\test_blogpost\BlogPost.Common\bin\Debug\netcoreapp3.1\BlogPost.Common.pdb
-D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\netcoreapp3.1\BlogPost.Common.csprojAssemblyReference.cache
 D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\netcoreapp3.1\BlogPost.Common.AssemblyInfoInputs.cache
 D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\netcoreapp3.1\BlogPost.Common.AssemblyInfo.cs
 D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\netcoreapp3.1\BlogPost.Common.csproj.CoreCompileInputs.cache
 D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\netcoreapp3.1\BlogPost.Common.dll
 D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\netcoreapp3.1\BlogPost.Common.pdb
+D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\netcoreapp3.1\BlogPost.Common.csprojAssemblyReference.cache

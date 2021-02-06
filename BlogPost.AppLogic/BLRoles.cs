@@ -42,6 +42,7 @@ namespace BlogPost.BLogic
             }
             catch (Exception ex)
             {
+                //TODO: remove ex warning
                 throw ex;
             }
         }
@@ -105,9 +106,9 @@ namespace BlogPost.BLogic
             {
                 throw new Exception("Error mapping entities...");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -125,9 +126,9 @@ namespace BlogPost.BLogic
             {
                 throw new Exception("Error mapping entities...");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
 
             return roles_dto;

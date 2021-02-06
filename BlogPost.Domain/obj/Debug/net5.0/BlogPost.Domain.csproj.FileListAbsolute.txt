@@ -1,0 +1,15 @@
+D:\Workspaces\test_blogpost\BlogPost.Domain\bin\Debug\net5.0\BlogPost.Domain.deps.json
+D:\Workspaces\test_blogpost\BlogPost.Domain\bin\Debug\net5.0\BlogPost.Domain.dll
+D:\Workspaces\test_blogpost\BlogPost.Domain\bin\Debug\net5.0\ref\BlogPost.Domain.dll
+D:\Workspaces\test_blogpost\BlogPost.Domain\bin\Debug\net5.0\BlogPost.Domain.pdb
+D:\Workspaces\test_blogpost\BlogPost.Domain\bin\Debug\net5.0\BlogPost.Common.dll
+D:\Workspaces\test_blogpost\BlogPost.Domain\bin\Debug\net5.0\BlogPost.Common.pdb
+D:\Workspaces\test_blogpost\BlogPost.Domain\obj\Debug\net5.0\BlogPost.Domain.csprojAssemblyReference.cache
+D:\Workspaces\test_blogpost\BlogPost.Domain\obj\Debug\net5.0\BlogPost.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspaces\test_blogpost\BlogPost.Domain\obj\Debug\net5.0\BlogPost.Domain.AssemblyInfoInputs.cache
+D:\Workspaces\test_blogpost\BlogPost.Domain\obj\Debug\net5.0\BlogPost.Domain.AssemblyInfo.cs
+D:\Workspaces\test_blogpost\BlogPost.Domain\obj\Debug\net5.0\BlogPost.Domain.csproj.CoreCompileInputs.cache
+D:\Workspaces\test_blogpost\BlogPost.Domain\obj\Debug\net5.0\BlogPost.Domain.csproj.CopyComplete
+D:\Workspaces\test_blogpost\BlogPost.Domain\obj\Debug\net5.0\BlogPost.Domain.dll
+D:\Workspaces\test_blogpost\BlogPost.Domain\obj\Debug\net5.0\ref\BlogPost.Domain.dll
+D:\Workspaces\test_blogpost\BlogPost.Domain\obj\Debug\net5.0\BlogPost.Domain.pdb
