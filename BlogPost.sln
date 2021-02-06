@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogPost.WebApp", "BlogPost.WebApp\BlogPost.WebApp.csproj", "{AF3CC998-A439-482D-997F-F1EBBC02B7B1}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogPost.AppCore", "BlogPost.AppCore\BlogPost.AppCore.csproj", "{A4A002AA-2F5C-487C-8120-0BC729E7E96E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogPost.WebApi", "BlogPost.WebApi\BlogPost.WebApi.csproj", "{4F24ECE2-0B55-4A91-BF3C-FB8F6899F69B}"
@@ -13,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogPost.Domain", "BlogPost
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogPost.BLogic", "BlogPost.AppLogic\BlogPost.BLogic.csproj", "{5EDA678F-45F9-4E04-9497-C56B3D02C3F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogPost.Common", "BlogPost.Common\BlogPost.Common.csproj", "{AF36DEF2-E8B8-405A-9333-C852C465E655}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogPost.Common", "BlogPost.Common\BlogPost.Common.csproj", "{AF36DEF2-E8B8-405A-9333-C852C465E655}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AF3CC998-A439-482D-997F-F1EBBC02B7B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF3CC998-A439-482D-997F-F1EBBC02B7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF3CC998-A439-482D-997F-F1EBBC02B7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF3CC998-A439-482D-997F-F1EBBC02B7B1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A4A002AA-2F5C-487C-8120-0BC729E7E96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A4A002AA-2F5C-487C-8120-0BC729E7E96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4A002AA-2F5C-487C-8120-0BC729E7E96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
