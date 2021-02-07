@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlogPost.WebApp.Models
 {
-    public class AppUser:IdentityUser
+    public class AppUser : IdentityUser
     {
         [MaxLength(100)]
         public string FirstName { get; set; }
