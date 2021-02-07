@@ -23,7 +23,6 @@ namespace BlogPost.BLogic.Dto
         /// <summary>
         /// List of the User roles.
         /// </summary>
-        public List<User> Users { get; set; }
 
         //TODO: add methods to validate propeties values.
     }

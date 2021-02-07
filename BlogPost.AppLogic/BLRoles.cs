@@ -116,20 +116,20 @@ namespace BlogPost.BLogic
         {
             IList<Dto.Role> roles_dto = null;
 
-            try
-            {
-                var roles = _unitWork.Roles.GetAll();
-                if (roles.IsAny())
-                    roles_dto = _mapper.Map<IEnumerable<Role>, IList<Dto.Role>>(roles);
-            }
-            catch (AutoMapperMappingException)
-            {
-                throw new Exception("Error mapping entities...");
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            //try
+            //{
+            //    var roles = _unitWork.Roles.GetAll();
+            //    if (roles.IsAny())
+            //        roles_dto = _mapper.Map<IEnumerable<Role>, IList<Dto.Role>>(roles);
+            //}
+            //catch (AutoMapperMappingException)
+            //{
+            //    throw new Exception("Error mapping entities...");
+            //}
+            //catch (Exception)
+            //{
+            //    throw;
+            //}
 
             return roles_dto;
         }

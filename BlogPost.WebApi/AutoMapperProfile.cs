@@ -18,7 +18,9 @@ namespace BlogPost.WebApi
         /// </summary>
         public AutoMapperProfile()
         {
-            CreateMap<Dto.Role, Role>().ReverseMap();
+            CreateMap<Role, Dto.Role>().ReverseMap();
+            CreateMap<Post, Dto.Post>().ReverseMap();
+            CreateMap<PostStatus, Dto.PostStatus>().ReverseMap();
 
         }
     }

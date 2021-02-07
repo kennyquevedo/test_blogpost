@@ -1,0 +1,32 @@
+﻿@model List<BlogPost.BLogic.Dto.Post>
+@{
+    ViewData["Title"] = "Posts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Published Posts</h1>
+<form method="post">
+    <div class="input-group">
+        <span class="input-group-btn mb-5">
+            <button class="btn btn-success">Add New Post</button>
+        </span>
+    </div>
+</form>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Published Date</th>
+            <th>Content</th>
+            <th>Author</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var post in Model)
+        {
+            <tr>
+                <td>@post.PublishedDate </td>
+                <td>@post.PostMessage</td>
+                <td>@post.AuthorId</td>
+            </tr>
+        }
+    </tbody>
+</table>

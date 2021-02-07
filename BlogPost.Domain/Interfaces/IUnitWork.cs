@@ -5,8 +5,7 @@ namespace BlogPost.Domain.Interfaces
     public interface IUnitWork : IDisposable
     {
         IRoleRepo Roles { get; }
-        IUserRepo Users { get; }
-        IUserRoleRepo UserRoles { get; }
+        IPostRepo Posts { get; }
         int Complete();
 
         //TODO: Remove unused spacename

@@ -10,16 +10,14 @@ namespace BlogPost.AppCore.UnitWorks
     {
         private readonly ApplicationContext _context;
         public IRoleRepo Roles { get; private set; }
-        public IUserRepo Users { get; private set; }
-        public IUserRoleRepo UserRoles { get; private set; }
+        public IPostRepo Posts { get; private set; }
 
         public UnitWork(ApplicationContext context)
         {
             _context = context;
 
             Roles = new RoleRepo(_context);
-            Users = new UserRepo(_context);
-            UserRoles = new UserRoleRepo(_context);
+            Posts = new PostRepo(_context);
         }
 
         public int Complete()

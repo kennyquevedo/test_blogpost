@@ -9082,7 +9082,6 @@
     "net5.0": [
       "BlogPost.BLogic >= 1.0.0",
       "BlogPost.Common >= 1.0.0",
-      "BlogPost.Domain >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 5.0.2",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.2",
       "Microsoft.AspNetCore.Identity.UI >= 3.1.11",
@@ -9122,9 +9121,6 @@
             },
             "D:\\Workspaces\\test_blogpost\\BlogPost.Common\\BlogPost.Common.csproj": {
               "projectPath": "D:\\Workspaces\\test_blogpost\\BlogPost.Common\\BlogPost.Common.csproj"
-            },
-            "D:\\Workspaces\\test_blogpost\\BlogPost.Domain\\BlogPost.Domain.csproj": {
-              "projectPath": "D:\\Workspaces\\test_blogpost\\BlogPost.Domain\\BlogPost.Domain.csproj"
             }
           }
         }

@@ -1,58 +1,60 @@
 ﻿using BlogPost.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BlogPost.AppCore.Repo
 {
     public class GenericRepo<T> : IGenericRepository<T> where T : class
     {
-        protected readonly ApplicationContext _context;
+        protected readonly ApplicationContext context;
         public GenericRepo(ApplicationContext context)
         {
-            _context = context;
+            this.context = context;
         }
 
-        public void Add(T entity)
+        public virtual void Add(T entity)
         {
-            _context.Set<T>().Add(entity);
+            context.Set<T>().Add(entity);
         }
 
         public void Update(T entity)
         {
-            _context.Update(entity);
+            context.Update(entity);
         }
 
         public void AddRange(IEnumerable<T> entities)
         {
-            _context.Set<T>().AddRange(entities);
+            context.Set<T>().AddRange(entities);
         }
 
         public IEnumerable<T> Find(Expression<Func<T, bool>> expression)
         {
-            return _context.Set<T>().Where(expression);
+            return context.Set<T>().Where(expression);
         }
 
-        public IEnumerable<T> GetAll()
+        public Task<List<T>> GetAllAsync()
         {
-            return _context.Set<T>().ToList();
+            return context.Set<T>().ToListAsync();
         }
 
         public T GetById(int id)
         {
-            return _context.Set<T>().Find(id);
+            return context.Set<T>().Find(id);
         }
 
         public void Remove(T entity)
         {
-            _context.Set<T>().Remove(entity);
+            context.Set<T>().Remove(entity);
         }
 
         public void RemoveRange(IEnumerable<T> entities)
         {
-            _context.Set<T>().RemoveRange(entities);
+            context.Set<T>().RemoveRange(entities);
         }
 
 

@@ -15,21 +15,14 @@ namespace BlogPost.AppCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<UserRole>().HasKey(ur => new { ur.UserId, ur.RoleId });
-
-            modelBuilder.Entity<UserRole>()
-                .HasOne<User>(u => u.User)
-                .WithMany(c => c.UserRoles)
-                .HasForeignKey(u => u.UserId);
-
-            modelBuilder.Entity<UserRole>()
-                .HasOne<Role>(r => r.Role)
-                .WithMany(u => u.UserRoles)
-                .HasForeignKey(u => u.RoleId);
+            modelBuilder.Entity<Post>()
+                .HasMany(p => p.Statuses)
+                .WithOne(s => s.Post)
+                .IsRequired();
         }
 
-        public DbSet<Role> Roles { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<Role> Role { get; set; }
+        public DbSet<Post> Post { get; set; }
+        public DbSet<PostStatus> PostStatus { get; set; }
     }
 }

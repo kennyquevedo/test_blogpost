@@ -11,6 +11,5 @@ namespace BlogPost.Domain
         public string Name { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
-        public IList<UserRole> UserRoles { get; set; }
     }
 }

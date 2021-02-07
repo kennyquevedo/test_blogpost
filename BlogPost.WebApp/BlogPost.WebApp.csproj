@@ -19,7 +19,6 @@
   <ItemGroup>
     <ProjectReference Include="..\BlogPost.AppLogic\BlogPost.BLogic.csproj" />
     <ProjectReference Include="..\BlogPost.Common\BlogPost.Common.csproj" />
-    <ProjectReference Include="..\BlogPost.Domain\BlogPost.Domain.csproj" />
   </ItemGroup>
 
 </Project>

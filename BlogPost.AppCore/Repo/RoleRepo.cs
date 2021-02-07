@@ -15,12 +15,12 @@ namespace BlogPost.AppCore.Repo
 
         public IEnumerable<Role> GetMostUsedRoles()
         {
-            return _context.Roles;
+            return context.Role;
         }
 
         public IEnumerable<Role> GetRolesByIds(IEnumerable<int> ids)
         {
-            return _context.Roles.Where(r => ids.Contains(r.Id));
+            return context.Role.Where(r => ids.Contains(r.Id));
         }
     }
 }

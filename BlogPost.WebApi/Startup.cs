@@ -61,13 +61,12 @@ namespace BlogPost.WebApi
             #region Repositories
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepo<>));
             services.AddTransient<IRoleRepo, RoleRepo>();
-            services.AddTransient<IUserRepo, UserRepo>();
-            services.AddTransient<IUserRoleRepo, UserRoleRepo>();
             #endregion
 
             services.AddTransient<IUnitWork, UnitWork>();
             services.AddTransient<IBLRoles, BLRoles>();
-            
+            services.AddTransient<IBLPosts, BLPosts>();
+
 
             #region Swagger
             var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
