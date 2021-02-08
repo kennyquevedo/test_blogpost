@@ -45,4 +45,6 @@ please click on **Add New Post** to navigate to add form view. By default all ne
 
 After create a new post, please login as **Editor** user to change status post and add the comment of the change. To edit a post you need to click on the specificy post and then app will go to the Edit post view.
 You can edit the content of the post, add a comment related to this change and apply status to the post. Remember that Viewer users only can see Approved posts.
-![enter image description here](https://i.imgur.com/ShAtUoj.png)
+
+![Edit Post](https://i.imgur.com/9gIQNdY.png)
+
