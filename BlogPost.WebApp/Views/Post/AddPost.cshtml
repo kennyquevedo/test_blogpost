@@ -1,0 +1,32 @@
+﻿@model BlogPost.BLogic.Dto.Post
+@{
+    ViewData["Title"] = "Add Post";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="PublishPost" method="post">
+    <div class="card">
+        <div class="card-header">
+            <h2>Publish new Post</h2>
+        </div>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="card-body">
+            <div class="form-group">
+                <label asp-for="PostMessage">Post Message:</label>
+                <textarea class="form-control"
+                          rows="5"
+                          asp-for="PostMessage"
+                          data-val-required="The Message is required."
+                          data-val="true"></textarea>
+                <span asp-validation-for="PostMessage" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="card-footer">
+            <input type="submit" value="Publish" class="btn btn-primary" style="width:auto" />
+            <a asp-action="Index" class="btn btn-danger" style="width:auto">Cancel</a>
+            <h2><span class="badge badge-danger">@ViewBag.Result</span></h2>
+        </div>
+    </div>
+</form>
+
+

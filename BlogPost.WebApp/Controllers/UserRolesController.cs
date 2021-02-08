@@ -1,4 +1,5 @@
 ﻿using BlogPost.Common;
+using BlogPost.Domain;
 using BlogPost.WebApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;

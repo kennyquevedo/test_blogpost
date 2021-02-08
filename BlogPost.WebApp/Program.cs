@@ -1,5 +1,6 @@
+using BlogPost.AppCore;
+using BlogPost.Domain;
 using BlogPost.WebApp.Data;
-using BlogPost.WebApp.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -26,7 +27,7 @@ namespace BlogPost.WebApp
                 //TODO: search about ilogerfactory
                 try
                 {
-                    var context = services.GetRequiredService<ApplicationDbContext>();
+                    var context = services.GetRequiredService<ApplicationContext>();
 
                     var userManager = services.GetRequiredService<UserManager<AppUser>>();
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();

@@ -52,6 +52,31 @@ namespace BlogPost.WebApi.Controllers
         }
 
         /// <summary>
+        /// Update post.
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
+        [HttpPut("update")]
+        public async Task<IActionResult> UpdatePostAsync([FromBody] Dto.Post post)
+        {
+            try
+            {
+                await blPosts.UpdatePostAsync(post);
+                return NoContent();
+            }
+            catch (ArgumentException argEx)
+            {
+                return BadRequest(argEx);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+
+
+        /// <summary>
         /// Get all posts in any state
         /// </summary>
         /// <returns></returns>
@@ -72,9 +97,10 @@ namespace BlogPost.WebApi.Controllers
             }
         }
 
-        // <summary>
-        /// Get posts by status
+        /// <summary>
+        /// Get post by status id
         /// </summary>
+        /// <param name="statusId"></param>
         /// <returns></returns>
         [HttpGet("status/{statusId}")]
         public async Task<ActionResult<Dto.Post>> GetPostsByStatusAsync(int statusId)
@@ -84,6 +110,28 @@ namespace BlogPost.WebApi.Controllers
                 var posts = await blPosts.GetPostsByStatusAsync(statusId);
                 if (posts.IsAny())
                     return Ok(posts);
+                else
+                    return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Get post by id
+        /// </summary>
+        /// <param name="postId"></param>
+        /// <returns></returns>
+        [HttpGet("{postId}")]
+        public async Task<ActionResult<Dto.Post>> GetPostsByIdAsync(int postId)
+        {
+            try
+            {
+                var post = await blPosts.GetPostsByIdAsync(postId);
+                if (post != null)
+                    return Ok(post);
                 else
                     return NoContent();
             }

@@ -8,9 +8,30 @@ namespace BlogPost.Common
 {
     public static class StatusValues
     {
-        public const int Published = 4;
+
         public const int Approved = 1;
         public const int Rejected = 2;
         public const int Review = 3;
-}
+        public const int Published = 4;
+
+        public static string GetDescription(this int value)
+        {
+            string description = "";
+
+            switch (value)
+            {
+                case 1:
+                    return "Approved";
+                case 2:
+                    return "Rejected";
+                case 3:
+                    return "Needs Review";
+                case 4:
+                    return "Published";
+            }
+
+            return description;
+        }
+
+    }
 }

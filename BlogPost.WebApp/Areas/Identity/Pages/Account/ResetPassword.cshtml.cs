@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using BlogPost.WebApp.Models;
+using BlogPost.Domain;
+
 namespace BlogPost.WebApp.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]

@@ -1,4 +1,4 @@
-﻿@model AppUser
+﻿@model BlogPost.Domain.AppUser
 @{
     ViewData["Title"] = "Edit User";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,7 +7,7 @@
 <form method="post">
     <div class="card">
         <div class="card-header">
-            <h2>Edit user @ViewBag.UserName.</h2>
+            <h2>Edit Post @ViewBag.UserName.</h2>
         </div>
         <div class="card-body">
             <div asp-validation-summary="All" class="text-danger"></div>

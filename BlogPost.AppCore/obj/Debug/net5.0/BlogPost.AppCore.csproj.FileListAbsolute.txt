@@ -1,4 +1,6 @@
 D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\net5.0\BlogPost.AppCore.deps.json
+D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\net5.0\BlogPost.AppCore.runtimeconfig.json
+D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\net5.0\BlogPost.AppCore.runtimeconfig.dev.json
 D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\net5.0\BlogPost.AppCore.dll
 D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\net5.0\ref\BlogPost.AppCore.dll
 D:\Workspaces\test_blogpost\BlogPost.AppCore\bin\Debug\net5.0\BlogPost.AppCore.pdb
@@ -15,3 +17,4 @@ D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\net5.0\BlogPost.AppCore.c
 D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\net5.0\BlogPost.AppCore.dll
 D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\net5.0\ref\BlogPost.AppCore.dll
 D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\net5.0\BlogPost.AppCore.pdb
+D:\Workspaces\test_blogpost\BlogPost.AppCore\obj\Debug\net5.0\BlogPost.AppCore.genruntimeconfig.cache

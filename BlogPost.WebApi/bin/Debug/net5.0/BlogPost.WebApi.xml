@@ -32,63 +32,31 @@
             <param name="post"></param>
             <returns></returns>
         </member>
+        <member name="M:BlogPost.WebApi.Controllers.PostController.UpdatePostAsync(BlogPost.BLogic.Dto.Post)">
+            <summary>
+            Update post.
+            </summary>
+            <param name="post"></param>
+            <returns></returns>
+        </member>
         <member name="M:BlogPost.WebApi.Controllers.PostController.GetAllPostAsync">
             <summary>
             Get all posts in any state
             </summary>
             <returns></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:BlogPost.WebApi.Controllers.PostController.GetPostsByStatusAsync(System.Int32)" -->
-        <member name="T:BlogPost.WebApi.Controllers.RoleController">
+        <member name="M:BlogPost.WebApi.Controllers.PostController.GetPostsByStatusAsync(System.Int32)">
             <summary>
-            Api controller for Role
+            Get post by status id
             </summary>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.RoleController.#ctor(BlogPost.BLogic.Interfaces.IBLRoles)">
-            <summary>
-            Ctor
-            </summary>
-            <param name="blRoles"></param>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.RoleController.AddRole(BlogPost.BLogic.Dto.Role)">
-            <summary>
-            Add a role to database
-            </summary>
-            <param name="role"></param>
+            <param name="statusId"></param>
             <returns></returns>
         </member>
-        <member name="M:BlogPost.WebApi.Controllers.RoleController.UpdateRole(BlogPost.BLogic.Dto.Role)">
+        <member name="M:BlogPost.WebApi.Controllers.PostController.GetPostsByIdAsync(System.Int32)">
             <summary>
-            Update Role
+            Get post by id
             </summary>
-            <param name="role"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.RoleController.DeleteRole(System.Int32)">
-            <summary>
-            Delete Role.
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.RoleController.GetAll">
-            <summary>
-            Get all roles
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.RoleController.GetById(System.Int32)">
-            <summary>
-            Get Role by Id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BlogPost.WebApi.Controllers.RoleController.GetRoleByName(System.String)">
-            <summary>
-            Get Role by Name
-            </summary>
-            <param name="roleName"></param>
+            <param name="postId"></param>
             <returns></returns>
         </member>
         <member name="T:BlogPost.WebApi.Startup">

@@ -1,5 +1,5 @@
 ﻿using BlogPost.Common;
-using BlogPost.WebApp.Models;
+using BlogPost.Domain;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;

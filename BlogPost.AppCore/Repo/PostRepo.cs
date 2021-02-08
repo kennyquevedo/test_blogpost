@@ -1,4 +1,5 @@
-﻿using BlogPost.Domain;
+﻿using BlogPost.Common;
+using BlogPost.Domain;
 using BlogPost.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -18,11 +19,42 @@ namespace BlogPost.AppCore.Repo
 
         public Task<List<Post>> GetPostsByStatusAsync(int statusId)
         {
-            var posts = (from p in context.Post
-                         where p.StatusId == statusId
-                         select p).ToListAsync();
+            //get post.
+            var posts = context.Post.Where(p => p.StatusId == statusId);
 
-            return posts;
+            if (posts.IsAny())
+            {
+                //get last status for each post.
+                foreach (var post in posts)
+                {
+                    var statusPost = context.PostStatus
+                            .Where(ps => ps.Post.Id == post.Id)
+                            .OrderByDescending(st => st.Id)
+                            .FirstOrDefault();
+
+                    //add status to post
+                    post.Statuses = new List<PostStatus>() { statusPost };
+
+                }
+            }
+
+            return posts.ToListAsync();
+        }
+
+        public async Task<Post> GetPostsByIdAsync(int postId)
+        {
+            var post = await context.Post.FindAsync(postId);
+            if (post != null)
+            {
+                var statusPost = context.PostStatus
+                            .Where(ps => ps.Post.Id == post.Id)
+                            .OrderByDescending(st => st.Id)
+                            .FirstOrDefault();
+
+                post.Statuses = new List<PostStatus>() { statusPost };
+            }
+
+            return post;
         }
     }
 }

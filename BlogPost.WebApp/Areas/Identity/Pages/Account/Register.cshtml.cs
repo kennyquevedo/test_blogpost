@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using BlogPost.WebApp.Models;
 using BlogPost.Common;
+using BlogPost.Domain;
 
 namespace BlogPost.WebApp.Areas.Identity.Pages.Account
 {

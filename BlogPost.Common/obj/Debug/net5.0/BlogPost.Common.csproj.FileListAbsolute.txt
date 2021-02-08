@@ -2,6 +2,7 @@ D:\Workspaces\test_blogpost\BlogPost.Common\bin\Debug\net5.0\BlogPost.Common.dep
 D:\Workspaces\test_blogpost\BlogPost.Common\bin\Debug\net5.0\BlogPost.Common.dll
 D:\Workspaces\test_blogpost\BlogPost.Common\bin\Debug\net5.0\ref\BlogPost.Common.dll
 D:\Workspaces\test_blogpost\BlogPost.Common\bin\Debug\net5.0\BlogPost.Common.pdb
+D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\net5.0\BlogPost.Common.csprojAssemblyReference.cache
 D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\net5.0\BlogPost.Common.GeneratedMSBuildEditorConfig.editorconfig
 D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\net5.0\BlogPost.Common.AssemblyInfoInputs.cache
 D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\net5.0\BlogPost.Common.AssemblyInfo.cs
@@ -9,4 +10,3 @@ D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\net5.0\BlogPost.Common.csp
 D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\net5.0\BlogPost.Common.dll
 D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\net5.0\ref\BlogPost.Common.dll
 D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\net5.0\BlogPost.Common.pdb
-D:\Workspaces\test_blogpost\BlogPost.Common\obj\Debug\net5.0\BlogPost.Common.csprojAssemblyReference.cache

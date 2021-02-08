@@ -50,7 +50,10 @@ namespace BlogPost.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()
+                .AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
@@ -60,11 +63,10 @@ namespace BlogPost.WebApi
 
             #region Repositories
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepo<>));
-            services.AddTransient<IRoleRepo, RoleRepo>();
+            services.AddTransient<IPostRepo, PostRepo>();
             #endregion
 
             services.AddTransient<IUnitWork, UnitWork>();
-            services.AddTransient<IBLRoles, BLRoles>();
             services.AddTransient<IBLPosts, BLPosts>();
 
 

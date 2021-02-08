@@ -1,16 +1,9 @@
-﻿@model List<AppUser>
+﻿@model List<BlogPost.Domain.AppUser>
 @{
     ViewData["Title"] = "User Manager";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h1>User Manager</h1>
-<form method="post" asp-action="AddUser" asp-controller="User">
-    <div class="input-group">
-        <span class="input-group-btn mb-5">
-            <button class="btn btn-success">Add New User</button>
-        </span>
-    </div>
-</form>
 <table class="table table-striped">
     <thead>
         <tr>

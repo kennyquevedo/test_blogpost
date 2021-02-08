@@ -1,5 +1,6 @@
+using BlogPost.AppCore;
+using BlogPost.Domain;
 using BlogPost.WebApp.Data;
-using BlogPost.WebApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,16 +30,23 @@ namespace BlogPost.WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<ApplicationContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<AppUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<ApplicationContext>()
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
 
+            services.AddMvc()
+                .AddSessionStateTempDataProvider();
+
+            services.AddSession();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,7 +55,6 @@ namespace BlogPost.WebApp
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
             }
             else
             {
@@ -60,8 +67,10 @@ namespace BlogPost.WebApp
 
             app.UseRouting();
 
+            app.UseSession();
             app.UseAuthentication();
             app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {

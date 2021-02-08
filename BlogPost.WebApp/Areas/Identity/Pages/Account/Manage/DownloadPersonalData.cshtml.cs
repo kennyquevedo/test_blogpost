@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using BlogPost.WebApp.Models;
+using BlogPost.Domain;
+
 namespace BlogPost.WebApp.Areas.Identity.Pages.Account.Manage
 {
     public class DownloadPersonalDataModel : PageModel

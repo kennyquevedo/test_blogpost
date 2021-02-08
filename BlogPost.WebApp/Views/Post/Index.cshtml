@@ -1,32 +1,61 @@
-﻿@model List<BlogPost.BLogic.Dto.Post>
+﻿@using BlogPost.Common;
+@model PostModel
 @{
     ViewData["Title"] = "Posts";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h1>Published Posts</h1>
-<form method="post">
-    <div class="input-group">
-        <span class="input-group-btn mb-5">
-            <button class="btn btn-success">Add New Post</button>
-        </span>
-    </div>
-</form>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Published Date</th>
-            <th>Content</th>
-            <th>Author</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var post in Model)
+<div class="container">
+    <div class="form-group clearfix">
+        @if (User.IsInRole(RoleValues.Writer))
         {
-            <tr>
-                <td>@post.PublishedDate </td>
-                <td>@post.PostMessage</td>
-                <td>@post.AuthorId</td>
-            </tr>
+            <div class="float-left w-25">
+                <form class="" id="FilterForm" method="get" asp-page-handler="FilterGenerated">
+                    <label asp-for="SelectedStatus">Select status to filter:</label>
+                    <select class="form-control mb-5"
+                            asp-for="SelectedStatus"
+                            asp-items="@Model.StatusList" onchange="this.form.submit()"></select>
+                </form>
+            </div>
+            <div class="float-right">
+                <form method="post">
+                    <button asp-action="AddPost" class="btn btn-success">Add New Post</button>
+                </form>
+            </div>
         }
-    </tbody>
-</table>
+    </div>
+    <div class="form-grop list-group clearfix">
+        @{ if (Model != null && Model.Posts.IsAny())
+            {
+                foreach (var post in Model.Posts)
+                {
+                    <a asp-controller="Post" asp-action="EditPost" asp-route-postId="@post.Id" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">@post.UserName</h5>
+                            <small class="text-muted">@post.Statuses.FirstOrDefault().StatusDescription</small>
+                        </div>
+                        <p class="mb-1">@post.PostMessage</p>
+                        <div class="col">
+                            <div class="row mt-2">
+                                <small class="text-muted">Published date: @post.PublishedDate</small>
+                            </div>
+                            @if (post.Statuses.IsAny() && !string.IsNullOrEmpty(post.Statuses.First().Comment))
+                            {
+                                <div class="row">
+                                    <small class="text-muted font-italic">Status Comment: @post.Statuses.First().Comment</small>
+                                </div>
+                            }
+                        </div>
+                    </a>
+                }
+            }
+            else
+            {
+                <h2>There is no posts to show. ;)</h2>
+            }
+        }
+    </div>
+</div>
+<h2><span class="badge badge-danger">@ViewBag.Result</span></h2>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

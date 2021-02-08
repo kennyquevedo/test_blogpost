@@ -9,5 +9,6 @@ namespace BlogPost.Domain.Interfaces
     public interface IPostRepo : IGenericRepository<Post>
     {
         Task<List<Post>> GetPostsByStatusAsync(int statusId);
+        Task<Post> GetPostsByIdAsync(int postId);
     }
 }

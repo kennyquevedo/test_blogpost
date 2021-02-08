@@ -1,5 +1,5 @@
 ﻿using BlogPost.Common;
-using BlogPost.WebApp.Models;
+using BlogPost.Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -32,15 +32,15 @@ namespace BlogPost.WebApp.Controllers
         {
             ViewBag.userId = userId;
             var user = await _userManager.FindByIdAsync(userId);
-            if (user == null)
-            {
-                ViewBag.ErrorMessage = $"User with Id = {userId} not found";
-                return View("NotFound");
-            }
-            else
+            if (user != null)
             {
                 ViewBag.UserName = user.UserName;
                 return View(user);
+            }
+            else
+            {
+                ViewBag.ErrorMessage = $"User with Id = {userId} not found";
+                return View("NotFound");
             }
         }
 

@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using BlogPost.WebApp.Models;
+using BlogPost.Domain;
+
 namespace BlogPost.WebApp.Areas.Identity.Pages.Account.Manage
 {
     public class ExternalLoginsModel : PageModel

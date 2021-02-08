@@ -9,14 +9,12 @@ namespace BlogPost.AppCore.UnitWorks
     public class UnitWork : IUnitWork
     {
         private readonly ApplicationContext _context;
-        public IRoleRepo Roles { get; private set; }
         public IPostRepo Posts { get; private set; }
 
         public UnitWork(ApplicationContext context)
         {
             _context = context;
 
-            Roles = new RoleRepo(_context);
             Posts = new PostRepo(_context);
         }
 
