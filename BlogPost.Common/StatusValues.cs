@@ -16,6 +16,11 @@ namespace BlogPost.Common
 
         public static string GetDescription(this int value)
         {
+            return GetDescriptionFromValue(value);
+        }
+
+        public static string GetDescriptionFromValue(int value)
+        {
             string description = "";
 
             switch (value)

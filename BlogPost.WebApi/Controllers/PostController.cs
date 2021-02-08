@@ -34,12 +34,15 @@ namespace BlogPost.WebApi.Controllers
         /// <param name="post"></param>
         /// <returns></returns>
         [HttpPost]
+        [ProducesResponseType(typeof(string), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> PublishPostAsync([FromBody] Dto.Post post)
         {
             try
             {
                 await blPosts.PublishPostAsync(post);
-                return NoContent();
+                return StatusCode(StatusCodes.Status201Created);
             }
             catch (ArgumentException argEx)
             {
@@ -57,6 +60,9 @@ namespace BlogPost.WebApi.Controllers
         /// <param name="post"></param>
         /// <returns></returns>
         [HttpPut("update")]
+        [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdatePostAsync([FromBody] Dto.Post post)
         {
             try
@@ -103,7 +109,10 @@ namespace BlogPost.WebApi.Controllers
         /// <param name="statusId"></param>
         /// <returns></returns>
         [HttpGet("status/{statusId}")]
-        public async Task<ActionResult<Dto.Post>> GetPostsByStatusAsync(int statusId)
+        [ProducesResponseType(typeof(IList<Dto.Post>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetPostsByStatusAsync(int statusId)
         {
             try
             {

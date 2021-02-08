@@ -59,6 +59,19 @@
             <param name="postId"></param>
             <returns></returns>
         </member>
+        <member name="M:BlogPost.WebApi.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:BlogPost.WebApi.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
         <member name="T:BlogPost.WebApi.Startup">
             <summary>
             
