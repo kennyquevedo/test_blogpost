@@ -22,22 +22,28 @@ namespace BlogPost.WebApp.Controllers
 
         public PostController(UserManager<BlogPost.Domain.AppUser> userManager)
         {
+            //Pass user manager to search author id for the post.
             this.userManager = userManager;
-
-
         }
 
+        /// <summary>
+        /// List post with status id
+        /// </summary>
+        /// <param name="postModel"></param>
+        /// <returns></returns>
         [HttpGet]
         [Authorize(Roles = RoleValues.Viewer)]
         public async Task<IActionResult> Index(PostModel postModel)
         {
+
+            //Set status to search posts.
             int statusId = 1;
             if (postModel != null && !string.IsNullOrEmpty(postModel.SelectedStatus))
                 statusId = Convert.ToInt32(postModel.SelectedStatus);
 
             PostModel model = new PostModel();
 
-            // 
+            //Setting url of the api.
             var url = new Uri(UrlValues.BaseUrl + string.Format(UrlValues.GetPostByStatusUrl, statusId));
 
             List<Post> publishedPost = new List<Post>();
@@ -45,13 +51,15 @@ namespace BlogPost.WebApp.Controllers
             {
                 using (var response = await httpClient.GetAsync(url))
                 {
+                    //Call api method.
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     if (response.IsSuccessStatusCode)
                     {
+                        //Get object from the result
                         publishedPost = JsonConvert.DeserializeObject<List<Post>>(apiResponse);
                         if (publishedPost.IsAny())
                         {
-                            //Add related user.
+                            //Add related user to the post, to show in the UI
                             foreach (Post post in publishedPost)
                             {
                                 var user = await userManager.FindByIdAsync(post.AuthorId.ToString());
@@ -77,28 +85,41 @@ namespace BlogPost.WebApp.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Call add post view.
+        /// </summary>
+        /// <returns></returns>
         [Authorize(Roles = RoleValues.Writer)]
         public ActionResult AddPost() => View();
 
+        /// <summary>
+        /// Load edit view and load the info related.
+        /// </summary>
+        /// <param name="postId"></param>
+        /// <returns></returns>
         [HttpGet("post/editpost/{postId}")]
         [Authorize(Roles = RoleValues.Writer)]
         public async Task<IActionResult> EditPost(int postId)
         {
+            //Get the user and validate if can edit.
             var user = await GetCurrentUserAsync();
             var isEditor = await userManager.IsInRoleAsync(user, RoleValues.Editor);
             if (isEditor)
             {
+                //Get url
                 var url = new Uri(UrlValues.BaseUrl + string.Format(UrlValues.GetPostByIdUrl, postId));
 
                 Post post = new Post();
-                PostModelEdit modelEdit = new PostModelEdit();
+                PostModelEdit modelEdit = new PostModelEdit(); //Model to bind the ui.
                 using (var httpClient = new HttpClient())
                 {
+                    //Call api method
                     using (var response = await httpClient.GetAsync(url))
                     {
                         string apiResponse = await response.Content.ReadAsStringAsync();
                         if (response.IsSuccessStatusCode)
                         {
+                            //Get object from the result.
                             post = JsonConvert.DeserializeObject<Post>(apiResponse);
 
                             //Add related user.
@@ -115,7 +136,9 @@ namespace BlogPost.WebApp.Controllers
                     }
                 }
 
+                //Remove previous value of tempdata.
                 TempData.Remove("postModelEdit");
+                //Set new value of the model to pass to Update action.
                 TempData.Set<PostModelEdit>("postModelEdit", modelEdit);
                 return View(modelEdit);
             }
@@ -125,10 +148,16 @@ namespace BlogPost.WebApp.Controllers
             }
         }
 
+        /// <summary>
+        /// Save a new post.
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
         [HttpPost]
         [Authorize(Roles = RoleValues.Writer)]
         public async Task<ActionResult> PublishPost(Post post)
         {
+            //Validate model, required fields.
             if (!ModelState.IsValid)
             {
                 return View("AddPost", post);
@@ -137,17 +166,18 @@ namespace BlogPost.WebApp.Controllers
             //prepare post.
             var user = await GetCurrentUserAsync();
             post.AuthorId = new Guid(user.Id);
-            post.StatusId = StatusValues.Published;
+            post.StatusId = StatusValues.Published; //Default state of the post.
             post.PublishedDate = DateTime.UtcNow;
 
             var status = new PostStatus()
             {
                 Comment = "",
                 Status = StatusValues.Published,
-                StatusDescription = StatusValues.Approved.GetDescription(),
+                StatusDescription = StatusValues.Published.GetDescription(), //Get description of the the status.
                 UserId = post.AuthorId,
                 StatusDate = post.PublishedDate
             };
+            //Assign first status to the post. 
             post.Statuses = new List<PostStatus>() { status };
 
             //Post message.
@@ -184,10 +214,16 @@ namespace BlogPost.WebApp.Controllers
             }
         }
 
+        /// <summary>
+        /// Update values of the post. (Approve, Reject...)
+        /// </summary>
+        /// <param name="postModel"></param>
+        /// <returns></returns>
         [HttpPost]
         [Authorize(Roles = RoleValues.Editor)]
         public async Task<IActionResult> UpdatePost(PostModelEdit postModel)
         {
+            //Validate value of the model.
             var post = new Post();
             if (postModel != null && postModel.SelectedPost != null)
                 post = postModel.SelectedPost;
@@ -197,7 +233,8 @@ namespace BlogPost.WebApp.Controllers
                 return View("EditPost", postModel);
             }
 
-            //Get values from tempdata.
+            //Get values from tempdata (it was set in the Edit action).
+            //This values will no change them in the update process.
             var postModelData = TempData.Get<PostModelEdit>("postModelEdit");
             if(postModelData != null)
             {
@@ -218,7 +255,7 @@ namespace BlogPost.WebApp.Controllers
             {
                 Comment = postModel.Comment,
                 Status = post.StatusId,
-                StatusDescription = StatusValues.Approved.GetDescription(),
+                StatusDescription = StatusValues.GetDescriptionFromValue(post.StatusId),
                 UserId = new Guid(user.Id),
                 StatusDate = DateTime.UtcNow
             };
@@ -259,6 +296,7 @@ namespace BlogPost.WebApp.Controllers
             }
         }
 
+        //Get logged user.
         private Task<BlogPost.Domain.AppUser> GetCurrentUserAsync() => userManager.GetUserAsync(HttpContext.User);
 
     }
