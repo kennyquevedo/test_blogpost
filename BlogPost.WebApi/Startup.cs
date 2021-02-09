@@ -75,7 +75,7 @@ namespace BlogPost.WebApi
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
             services.AddSwaggerGen(c =>
             {
-                c.IncludeXmlComments(string.Format(@"{0}\{1}", @"D:\Workspaces\test_blogpost\BlogPost.WebApi", "BlogPost.WebApi.xml"));
+                c.IncludeXmlComments(string.Format(@"{0}", xmlPath));
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",

@@ -1,5 +1,4 @@
 D:\Workspaces\test_blogpost\BlogPost.WebApp\bin\Debug\net5.0\appsettings.Development.json
-D:\Workspaces\test_blogpost\BlogPost.WebApp\bin\Debug\net5.0\appsettings.json
 D:\Workspaces\test_blogpost\BlogPost.WebApp\bin\Debug\net5.0\BlogPost.WebApp.StaticWebAssets.xml
 D:\Workspaces\test_blogpost\BlogPost.WebApp\bin\Debug\net5.0\BlogPost.WebApp.exe
 D:\Workspaces\test_blogpost\BlogPost.WebApp\bin\Debug\net5.0\BlogPost.WebApp.deps.json

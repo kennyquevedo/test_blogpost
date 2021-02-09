@@ -30,7 +30,7 @@ namespace BlogPost.WebApi
             .ConfigureAppConfiguration((builderContext, config) =>
             {
                 IHostEnvironment env = builderContext.HostingEnvironment;
-                config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
             })
             .ConfigureWebHostDefaults(webBuilder =>
