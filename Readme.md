@@ -27,6 +27,7 @@ This soultions has differents types of project that build a ntier solution:
 
 # Description Flow.
 By default after setup and first run of WebApp, this create necesary roles and admin user to allow navigate the app. However you can create your own user in the **Register** option in the main Menu and fill the form to create a new one.
+You can see a live example in **https://blogpostwebapp.azurewebsites.net/**
 Default user credentials: **admin@fake.email.com / Password.123**
 ![User Registration](https://i.imgur.com/Hv4KNjT.png)
 
