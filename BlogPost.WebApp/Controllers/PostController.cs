@@ -13,17 +13,22 @@ using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using BlogPost.WebApp.Models;
+using Microsoft.Extensions.Options;
 
 namespace BlogPost.WebApp.Controllers
 {
     public class PostController : Controller
     {
         private readonly UserManager<BlogPost.Domain.AppUser> userManager;
+        private readonly ApiRoutes apiRoutes;
 
-        public PostController(UserManager<BlogPost.Domain.AppUser> userManager)
+        public PostController(UserManager<BlogPost.Domain.AppUser> userManager, IOptions<ApiRoutes> apiRoutes)
         {
             //Pass user manager to search author id for the post.
             this.userManager = userManager;
+
+            //Get the api routes from the appsettings file.
+            this.apiRoutes = apiRoutes.Value;
         }
 
         /// <summary>
@@ -44,7 +49,7 @@ namespace BlogPost.WebApp.Controllers
             PostModel model = new PostModel();
 
             //Setting url of the api.
-            var url = new Uri(UrlValues.BaseUrl + string.Format(UrlValues.GetPostByStatusUrl, statusId));
+            var url = new Uri(apiRoutes.BaseUrl + string.Format(apiRoutes.GetPostByStatusUrl, statusId));
 
             List<Post> publishedPost = new List<Post>();
             using (var httpClient = new HttpClient())
@@ -107,7 +112,7 @@ namespace BlogPost.WebApp.Controllers
             if (isEditor)
             {
                 //Get url
-                var url = new Uri(UrlValues.BaseUrl + string.Format(UrlValues.GetPostByIdUrl, postId));
+                var url = new Uri(apiRoutes.BaseUrl + string.Format(apiRoutes.GetPostByIdUrl, postId));
 
                 Post post = new Post();
                 PostModelEdit modelEdit = new PostModelEdit(); //Model to bind the ui.
@@ -185,7 +190,7 @@ namespace BlogPost.WebApp.Controllers
             {
                 try
                 {
-                    httpClient.BaseAddress = new Uri(UrlValues.BaseUrl + UrlValues.AddPostUrl);
+                    httpClient.BaseAddress = new Uri(apiRoutes.BaseUrl + apiRoutes.AddPostUrl);
 
                     //HTTP POST
                     var postTask = await httpClient.PostAsJsonAsync<Post>("post", post);
@@ -267,7 +272,7 @@ namespace BlogPost.WebApp.Controllers
             {
                 try
                 {
-                    httpClient.BaseAddress = new Uri(UrlValues.BaseUrl + UrlValues.UpdatePostUrl);
+                    httpClient.BaseAddress = new Uri(apiRoutes.BaseUrl + apiRoutes.UpdatePostUrl);
 
                     //HTTP PUT
                     var postTask = await httpClient.PutAsJsonAsync<Post>("update", post);

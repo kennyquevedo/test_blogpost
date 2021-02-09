@@ -1,4 +1,5 @@
 using BlogPost.AppCore;
+using BlogPost.Common;
 using BlogPost.Domain;
 using BlogPost.WebApp.Data;
 using Microsoft.AspNetCore.Builder;
@@ -43,10 +44,13 @@ namespace BlogPost.WebApp
             services.AddMvc()
                 .AddSessionStateTempDataProvider();
 
+            services.Configure<ApiRoutes>(Configuration.GetSection("ApiRoutes"));
+
             services.AddSession();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+
 
 
         }
